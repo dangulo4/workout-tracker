@@ -37,4 +37,22 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
     });
 });
 
+// get stats
+router.get('/api/workouts/range', function (req, res) {
+  Workout.find()
+    .then((data) => res.json(data))
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+// post stats
+router.post('/api/workouts/range', function (req, res) {
+  Workout.create({})
+    .then((data) => res.json(data))
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 module.exports = router;
