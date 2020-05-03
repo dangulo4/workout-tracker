@@ -50,8 +50,8 @@ const workoutSchema = new Schema(
 
 // function to calculate total duration
 workoutSchema.virtual('totalDuration').get(function () {
-  return this.exercises.reduce((total, exercises) => {
-    return total + exercises.duration;
+  return this.exercises.reduce((total, exercise) => {
+    return total + exercise.duration;
   }, 0);
 });
 
